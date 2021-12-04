@@ -1,0 +1,77 @@
+<template>
+<div class="slds-table_edit_container slds-is-relative">
+    <table aria-multiselectable="true"
+        class="slds-table slds-no-cell-focus slds-table_bordered slds-table_edit slds-table_fixed-layout slds-table_resizable-cols"
+        role="grid" aria-label="Example default inline edit table with cell focused">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col" style="width:.75rem">
+                    <div class="slds-truncate slds-assistive-text" title="Errors">Errors</div>
+                </th>
+                <th aria-label="Name" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col"
+                    style="width:8.75rem">
+                    <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                        <span class="slds-assistive-text">Sort by: </span>
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Name</span>
+                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon "
+                                    aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <div class="slds-resizable">
+                        <input type="range" aria-label="Name column width"
+                            class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-2269" max="1000"
+                            min="20" tabindex="-1" />
+                        <span class="slds-resizable__handle">
+                            <span class="slds-resizable__divider"></span>
+                        </span>
+                    </div>
+                </th>
+                <th aria-label="Rating" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col"
+                    style="width:8.75rem">
+                    <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                        <span class="slds-assistive-text">Sort by: </span>
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Rating">Rating</span>
+                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon "
+                                    aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <div class="slds-resizable">
+                        <input type="range" aria-label="Rating column width"
+                            class="slds-resizable__input slds-assistive-text" id="cell-resize-handle-2270" max="1000"
+                            min="20" tabindex="-1" />
+                        <span class="slds-resizable__handle">
+                            <span class="slds-resizable__divider"></span>
+                        </span>
+                    </div>
+                </th>
+                <th aria-label="Actions" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:1.75rem">
+                    <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Rating">Actions</span>
+                        </div>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={accounts} for:item="row">
+                <c-row key={row.Id} row={row} ondraftvalurchanged={onDraftValueChanged} ondelete={onDelete}></c-row>
+            </template>
+        </tbody>
+    </table>
+    <footer if:true={showFooter} class="slds-modal__footer" style="display: flex; justify-content:center;">
+        <button class="slds-button slds-button_neutral" onclick={onCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={onSave}>Save</button>
+    </footer>
+</div>
+</template>
