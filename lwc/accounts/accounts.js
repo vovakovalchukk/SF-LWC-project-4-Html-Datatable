@@ -40,8 +40,7 @@ export default class Accounts extends LightningElement {
 
     onDraftValueChanged(event) {
         let dataRecieved = event.detail.data;
-        let updatedItem = { Id: dataRecieved.Id, Name: dataRecieved.Name, Rating: dataRecieved.Rating};
-        this.draftValues = updatedItem;
+        this.draftValues = { Id: dataRecieved.Id, Name: dataRecieved.Name, Rating: dataRecieved.Rating};
         this.toBlockEditButtons();
         this.showFooter = true;
     }
@@ -67,13 +66,7 @@ export default class Accounts extends LightningElement {
     }
 
     onSave() {
-        const fields = {}; 
-        fields['Id'] = this.draftValues.Id;
-        fields['Name'] = this.draftValues.Name;
-        fields['Rating'] = this.draftValues.Rating;
-        const recordInput = {fields};
-
-        updateRecord(recordInput)
+        updateRecord({fields:{...this.draftValues}})
         .then(() => {
             this.dispatchEvent(
                 new ShowToastEvent({

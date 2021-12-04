@@ -35,9 +35,6 @@ export default class Row extends LightningElement {
 
     handleDelete() {
         this.dispatchEvent(new CustomEvent('delete', {
-                composed: true,
-                bubbles: true,
-                cancelable: true,
                 detail: {
                     data: { Id: this.row.Id }
                 }
@@ -51,9 +48,6 @@ export default class Row extends LightningElement {
         } else {
             this.template.querySelector(`[data-th-name-id="${this.row.Id}"]`).classList.add('slds-is-edited');
             this.dispatchEvent(new CustomEvent('draftvalurchanged', {
-                composed: true,
-                bubbles: true,
-                cancelable: true,
                 detail: {
                     data: { Id: this.row.Id, Name: this.draftNameValue }
                 }
@@ -68,9 +62,6 @@ export default class Row extends LightningElement {
         } else {
             this.template.querySelector(`[data-th-rating-id="${this.row.Id}"]`).classList.add('slds-is-edited');
             this.dispatchEvent(new CustomEvent('draftvalurchanged', {
-                composed: true,
-                bubbles: true,
-                cancelable: true,
                 detail: {
                     data: { Id: this.row.Id, Rating: this.draftRatingValue }
                 }
