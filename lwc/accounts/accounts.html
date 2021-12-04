@@ -5,11 +5,10 @@
         role="grid" aria-label="Example default inline edit table with cell focused">
         <thead>
             <tr class="slds-line-height_reset">
-                <th class="" scope="col" style="width:.75rem">
+                <th class="column_number" scope="col">
                     <div class="slds-truncate slds-assistive-text" title="Errors">Errors</div>
                 </th>
-                <th aria-label="Name" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col"
-                    style="width:8.75rem">
+                <th aria-label="Name" aria-sort="none" class="slds-is-resizable slds-is-sortable column_name" scope="col">
                     <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
                         <span class="slds-assistive-text">Sort by: </span>
                         <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
@@ -31,8 +30,7 @@
                         </span>
                     </div>
                 </th>
-                <th aria-label="Rating" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col"
-                    style="width:8.75rem">
+                <th aria-label="Rating" aria-sort="none" class="slds-is-resizable slds-is-sortable column_rating" scope="col">
                     <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
                         <span class="slds-assistive-text">Sort by: </span>
                         <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
@@ -54,7 +52,7 @@
                         </span>
                     </div>
                 </th>
-                <th aria-label="Actions" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:1.75rem">
+                <th aria-label="Actions" aria-sort="none" class="slds-is-resizable slds-is-sortable column_actions" scope="col">
                     <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
                         <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
                             <span class="slds-truncate" title="Rating">Actions</span>
@@ -69,7 +67,7 @@
             </template>
         </tbody>
     </table>
-    <footer if:true={showFooter} class="slds-modal__footer" style="display: flex; justify-content:center;">
+    <footer if:true={showFooter} class="slds-modal__footer">
         <button class="slds-button slds-button_neutral" onclick={onCancel}>Cancel</button>
         <button class="slds-button slds-button_brand" onclick={onSave}>Save</button>
     </footer>

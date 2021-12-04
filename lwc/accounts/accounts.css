@@ -1,0 +1,17 @@
+.column_number {
+    width: .75rem;
+}
+
+.column_name,
+.column_rating {
+    width: 8.75rem;
+}
+
+.column_actions {
+    width: 1.75rem;
+}
+
+.slds-modal__footer {
+    display: flex; 
+    justify-content: center
+}

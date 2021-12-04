@@ -1,5 +1,5 @@
 <template>
-    <tr aria-selected="false" class="slds-hint-parent" style="width: 100%; display: contents;">
+    <tr aria-selected="false" class="slds-hint-parent">
         <th class="slds-cell-edit" role="gridcell">
             <span class="slds-grid slds-grid_align-spread">
                 <span class="slds-truncate" title={row.Index}>{row.Index}</span>
@@ -15,8 +15,7 @@
                     </lightning-icon>
                 </button>
             </span>
-            <section if:true={showModalEditName} aria-describedby="dialog-body-id-{row.Index}" class="slds-popover slds-popover slds-popover_edit" role="dialog"
-                style="position:absolute;top:0;left:0.0625rem">
+            <section if:true={showModalEditName} aria-describedby="dialog-body-id-{row.Index}" class="slds-popover slds-popover slds-popover_edit" role="dialog">
                 <div class="slds-popover__body">
                     <div class="slds-media">
                         <div class="slds-media__body">
@@ -44,7 +43,7 @@
                 </button>
             </span>
             <section if:true={showModalEditRating} aria-describedby="dialog-body-id-{row.Index}"
-                class="slds-popover slds-popover slds-popover_edit" role="dialog" style="position:absolute;top:0;left:0.0625rem">
+                class="slds-popover slds-popover slds-popover_edit" role="dialog">
                 <div class="slds-popover__body">
                     <div class="slds-media">
                         <div class="slds-media__body">
@@ -63,7 +62,7 @@
             </section>
         </th>
         <th data-th-rating-id={row.Id} class="slds-cell-edit" role="gridcell">
-            <span class="slds-grid slds-grid_align-spread" style="justify-content: center; display: flex;">
+            <span class="slds-grid slds-grid_align-spread cell_delete">
                 <button
                     class="slds-button slds-button_icon" tabindex="-1" title="Delete"
                     onclick={handleDelete}>

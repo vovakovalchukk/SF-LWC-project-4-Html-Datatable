@@ -1,3 +1,19 @@
 :host {
     display: table-row;
-    }
+}
+
+.slds-hint-parent {
+    width: 100%; 
+    display: contents;
+}
+
+.slds-popover_edit {
+    position: absolute;
+    top: 0;
+    left: 0.0625rem;
+}
+
+.cell_delete {
+    justify-content: center; 
+    display: flex;
+}
